@@ -12,8 +12,10 @@
         id:string(),
         isBorderB:bool().def(false),
         isBorder:bool().def(false),
-        isPlaceholderMd:bool().def(false),
-        isPlaceholderLg:bool().def(false),
+        isPlaceholderDanger:bool().def(false),
+        isPlaceholderWarning:bool().def(false),
+        isPlaceholderSuccess:bool().def(false),
+        isPlaceholderPrimary:bool().def(false),
         isCapitalize:bool().def(false),
         isPill:bool().def(false),
         isCurve:bool().def(false),
@@ -21,16 +23,14 @@
         isBorderPrimary:bool().def(false),
         isBorderDanger:bool().def(false),
         isBorderInfo:bool().def(false),
-        isBorderWarning:bool().def(false)
-
+        isBorderWarning:bool().def(false),
+        isSharp:bool().def(false)
     })
 
 
     const elementClass = computed(() =>({
         'is-border-bottom': props.isBorderB,
         'is-border': props.isBorder,
-        'placeholder-md': props.isPlaceholderMd,
-        'placeholder-lg': props.isPlaceholderLg,
         'is-capitalize': props.isCapitalize,
         'is-pill': props.isPill,
         'is-curve': props.isCurve,
@@ -38,6 +38,11 @@
         'is-border-warning': props.isBorderWarning,
         'is-border-primary': props.isBorderPrimary,
         'is-border-success': props.isBorderSuccess,
+        'is-sharp': props.isSharp,
+        'is-placeholder-danger': props.isPlaceholderDanger,
+        'is-placeholder-primary': props.isPlaceholderPrimary,
+        'is-placeholder-warning': props.isPlaceholderWarning,
+        'is-placeholder-success': props.isPlaceholderSuccess
     }))
 </script>
 
@@ -46,6 +51,8 @@
     .input {
         @apply px-[10px] py-[8px] 
     }
+    
+
 
     .input.is-border-bottom {
         @apply  border-b-[1px] border-b-black
@@ -68,7 +75,7 @@
     }
 
     .input.is-border-danger {
-        @apply border-b-red-500
+        @apply border-b-red-500 border-b-[1px]
     }
 
     .input.is-border-warning {
@@ -82,4 +89,25 @@
     .input.is-border-success {
         @apply border-b-lime-400 border-b-[1px]
     }
+
+    .input.is-sharp {
+        @apply rounded-none
+    }
+
+    .input.is-placeholder-danger::placeholder {
+        @apply text-red-400
+    }
+
+    .input.is-placeholder-success::placeholder {
+        @apply text-lime-400
+    }
+
+    .input.is-placeholder-primary::placeholder {
+        @apply text-blue-400
+    }
+
+    .input.is-placeholder-warning::placeholder {
+        @apply text-yellow-500
+    }
+    
 </style>
