@@ -5,7 +5,17 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontWeight: {
+        thin:400,
+        medium:500,
+        bold:700
+      }
+    },
+    fontFamily:{
+      'roboto':['Roboto','sans-serif']
+    }
+
   },
   plugins: [],
 }
